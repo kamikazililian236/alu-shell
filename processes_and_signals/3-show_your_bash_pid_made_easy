@@ -1,5 +1,11 @@
-#!/usr/bin/env bash
-# Lists bash processes with their PIDs using pgrep
-
-pgrep -l bash
+#!/bin/bash
+for pid in /proc/[0-9]*/
+do
+    pid=${pid//[^0-9]/}
+    name=$(cat /proc/$pid/comm 2>/dev/null)
+    if echo "$name" | grep -q "bash"
+    then
+        echo "$pid $name"
+    fi
+done
 
