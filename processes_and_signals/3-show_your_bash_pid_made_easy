@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Displays PID and name of processes whose name contains the word bash
 for pid in /proc/[0-9]*/
 do
     pid=${pid//[^0-9]/}
