@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays lines containing "bash" to find your Bash PID
+# shellcheck disable=SC2009
+ps auxf | grep bash
